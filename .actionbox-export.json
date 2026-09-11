@@ -1,0 +1,23 @@
+{
+  "files": {
+    ".github/CODEOWNERS": "173fa777d25488c5fa0076709c348871cef12c00bb826bb5ff096c72328b3b35",
+    ".github/ISSUE_TEMPLATE/config.yml": "e20ffe109628211232b4addbac7244816a7a2dfd7a6b4bb413e8469f4cfdeb87",
+    ".github/dependabot.yml": "650f0564bcb0fe07277fe91762bcbff97423f9523530d2dd4b276e99afb576b3",
+    ".github/pull_request_template.md": "9ee0bcfd515f04463fc0a03e35fa3ea1b94c603e54df495b14979f50db8c1a4c",
+    ".github/workflows/ci.yml": "9796d009278efc7fd26036835bf403e2822befc852e5403f4879f2503c0236df",
+    ".gitignore": "da68cd71fed314a7f157f38f8e369e8e9e6157f11819854c22eceeb2db1a10d3",
+    "CONTRIBUTING.md": "0eaf1d6e23cc6349b451500f47915cf02ffba0cfe1057766d585dc28fcc4a818",
+    "LICENSE": "f7eb6ff06d9165744040588157880a7410cc6aa50e80d1923376a84b9492a043",
+    "README.md": "7918a3ec478aa86d931ff7b611ecbbb5e86778fe458a86234b271287f2f97bc1",
+    "SECURITY.md": "307ba51f4d32cf505b01bc748736a82983c38b8e487bf5f4ed54d8277deb015f",
+    "package-lock.json": "de504b134e0d23719284912252feeb92fe674a7439de6dcb5fc7809d8a802c5d",
+    "package.json": "c205829a45f5b4445d04015fd475ba5b682c2e3fcc4dbe5f7dc81f82d3a73eaa",
+    "src/index.ts": "e258314ad1b6bb33d1caa8cc90a7a9ec781b5e89d2569afced617f37835ea764",
+    "tests/client.test.mjs": "4066fd592a67fbd0e10e0bf603c8cb30b33ee2895b499bf4fdb1d233d93e9c12",
+    "tests/fixtures/decision-receipt-v1.json": "98f617f2e4eaec8203c1d402ab31a60df6c287787473c24e92bf7d997b3a9a17",
+    "tests/fixtures/decision-receipt-v2.json": "7c9951b8d5acda57f92044e34287b009422d6da2e62b6d32585af56e58ae0e17",
+    "tests/receipt.test.mjs": "81006b8df88770d4166c6f8cc98d45a8fc64ff4f88b65d13032fab32862442cf",
+    "tsconfig.json": "ba638e0a210eb8b93c6a011a15d5efdf5a748faf995ae2e4d8024d8270fe8d0d"
+  },
+  "schema": 1
+}

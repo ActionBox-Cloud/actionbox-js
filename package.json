@@ -1,0 +1,54 @@
+{
+  "name": "@actionbox/sdk",
+  "version": "0.2.1",
+  "description": "TypeScript client for Actionbox durable human decisions",
+  "keywords": [
+    "actionbox",
+    "human-in-the-loop",
+    "approval",
+    "workflow",
+    "automation",
+    "typescript",
+    "sdk"
+  ],
+  "homepage": "https://actionbox.cloud",
+  "license": "MIT",
+  "type": "module",
+  "browser": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "prepublishOnly": "npm test",
+    "prepack": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ActionBox-Cloud/actionbox-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ActionBox-Cloud/actionbox-js/issues"
+  }
+}
