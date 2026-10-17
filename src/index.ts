@@ -1,6 +1,7 @@
 export const SDK_VERSION = "0.2.1";
 
 export type ActionStatus = "open" | "resolved" | "cancelled" | "expired";
+export type ContextRequestMode = "unsupported" | "poll" | "callback";
 
 export type OptionStyle = "default" | "primary" | "destructive";
 
@@ -276,6 +277,7 @@ export interface ApprovalProgress {
 
 export interface ActionCreateInput {
   chat_delivery?: "inherit" | "disabled";
+  context_request_mode?: ContextRequestMode;
   title: string;
   description?: string;
   priority?: "low" | "normal" | "high" | "urgent";
@@ -403,6 +405,7 @@ export interface Action {
   context?: ActionContextBlock[];
   decision_class?: string | null;
   decision_context?: DecisionContext | null;
+  context_request_mode?: ContextRequestMode;
   context_request?: ActionContextRequest | null;
   on_expire?: ActionCreateInput["on_expire"];
   controls?: ActionControl[];
@@ -982,6 +985,7 @@ function newIdempotencyKey(): string {
 
 const ACTION_CREATE_KEYS = new Set([
   "title", "description", "priority", "open_url", "dedupe_key", "callback_url", "controls", "chat_delivery",
+  "context_request_mode",
   "expires_at", "on_expire", "context", "decision_class", "decision_context", "options",
   "interaction", "metadata", "visibility", "reviewer_user_ids", "reviewer_emails", "approval_policy",
   "assignee_user_id", "assignee_email", "run_id",

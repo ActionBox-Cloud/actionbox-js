@@ -140,6 +140,7 @@ test("additive Action fields and the legacy decision summary remain readable", a
       _actionbox_projection: "decision_context_v1",
     }],
     decision_context: { schema_version: 1, risk_level: "high" },
+    context_request_mode: "poll",
     future_server_field: { safe: true },
   };
   const client = new ActionboxClient({
@@ -152,6 +153,7 @@ test("additive Action fields and the legacy decision summary remain readable", a
   assert.equal(action.action_version, 3);
   assert.equal(action.fingerprint, "sha256:bound");
   assert.equal(action.context[0].content, "Proposed change: Deploy 2.18.0.");
+  assert.equal(action.context_request_mode, "poll");
   assert.deepEqual(action.future_server_field, { safe: true });
 });
 
@@ -222,8 +224,13 @@ test("create accepts a reviewer email", async () => {
       return jsonResponse({ data: { id: "act_1", status: "open", title: "Review", description: "", resolution_option_id: null } });
     },
   });
-  await client.create({ title: "Review", assignee_email: "reviewer@example.com" });
+  await client.create({
+    title: "Review",
+    assignee_email: "reviewer@example.com",
+    context_request_mode: "poll",
+  });
   assert.equal(body.assignee_email, "reviewer@example.com");
+  assert.equal(body.context_request_mode, "poll");
 });
 
 test("create forwards a restricted reviewer list", async () => {

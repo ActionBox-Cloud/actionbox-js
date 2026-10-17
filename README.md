@@ -114,6 +114,7 @@ import { deploymentDecisionContext } from "@actionbox/sdk";
 
 const action = await client.create({
   title: "Deploy 2.18.0?",
+  context_request_mode: "poll",
   decision_class: "production_deployment",
   decision_context: deploymentDecisionContext({
     reason: "Release passed staging.",
@@ -127,6 +128,11 @@ const action = await client.create({
 
 The generic, refund, database-change, and access-request helpers emit the same
 wire shape; they do not create server-side template types.
+
+Set `context_request_mode` to `poll` only when the integration monitors Action
+updates and can respond. Use `callback` with a `callback_url` when the webhook
+handler supports `action.context_requested`; the default `unsupported` mode
+hides the follow-up control for static scripts.
 
 If `action.context_request` is present, a reviewer has asked for more detail.
 Update the same Action so the pending request clears and the reviewer sees the
